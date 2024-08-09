@@ -12,3 +12,12 @@ if [ -d "articles" ]; then
 else
   echo "articles directory does not exist."
 fi
+
+# Check if the articles directory exists
+if [ -d "configs" ]; then
+  # Move the articles directory into the dist directory
+  cp -r configs/* dist/
+  echo "Moved configs files to dist."
+else
+  echo "configs directory does not exist."
+fi
