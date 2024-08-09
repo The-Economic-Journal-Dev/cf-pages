@@ -1,0 +1,54 @@
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Home Page -->
+  <url>
+    <loc>https://www.derpdevstuffs.org/</loc>
+    <lastmod>2024-08-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.derpdevstuffs.org/signin</loc>
+    <lastmod>2024-08-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.derpdevstuffs.org/finance</loc>
+    <lastmod>2024-08-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.derpdevstuffs.org/entrepreneur</loc>
+    <lastmod>2024-08-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.derpdevstuffs.org/business</loc>
+    <lastmod>2024-08-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.derpdevstuffs.org/economic</loc>
+    <lastmod>2024-08-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.derpdevstuffs.org/contact</loc>
+    <lastmod>2024-08-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Not Found Page (Optional) -->
+  <url>
+    <loc>https://www.derpdevstuffs.org/notfound</loc>
+    <lastmod>2024-08-10</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.1</priority>
+  </url>
+
+</urlset>

@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /articles
+Disallow: /assets
+Disallow: /profile
+Disallow: /home
+
+User-agent: BingBot
+Allow: /articles
+Disallow: /assets
+Disallow: /profile
+Disallow: /home
+Crawl-delay: 10
