@@ -24,7 +24,7 @@ for file in "${ARTICLES_DIR}"/*; do
         commit_date=$(curl -s "https://api.github.com/repos/$OWNER/$REPO/commits?path=$file&page=1&per_page=1" | \
     grep -m 1 '"date"' | \
     sed 's/^[ \t]*//;s/.*"date": "\(.*\)".*/\1/' | \
-    cut -d'T' -f1
+    cut -d'T' -f1)
         
         # Remove .html extension if present
         filename_without_extension=${filename%.html}
