@@ -19,9 +19,10 @@ echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
 for file in "${ARTICLES_DIR}"/*; do
     # Get just the filename
     filename=$(basename "$file")
+    file_encoded=$(printf "%s" "$file" | sed 's/ /%20/g')
     
     if [[ "$filename" != "build.sh" && "$filename" != "404.html" && "$filename" != "sitemap.xml" && -f "$file" ]]; then
-        commit_date=$(curl -s "https://api.github.com/repos/$OWNER/$REPO/commits?path=$file&page=1&per_page=1" | \
+        commit_date=$(curl -s "https://api.github.com/repos/$OWNER/$REPO/commits?path=$file_encoded&page=1&per_page=1" | \
     grep -m 1 '"date"' | \
     sed 's/^[ \t]*//;s/.*"date": "\(.*\)".*/\1/' | \
     cut -d'T' -f1)
