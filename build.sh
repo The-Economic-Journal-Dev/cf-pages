@@ -4,6 +4,42 @@ if [ ! -d "dist" ]; then
   mkdir dist
 fi
 
+# Define the root directory and articles directory
+ROOT_DIR="$(pwd)"
+ARTICLES_DIR="${ROOT_DIR}/articles"
+
+# Start the XML output to sitemap.xml in the articles directory
+{
+echo '<?xml version="1.0" encoding="UTF-8"?>'
+echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
+
+# Loop through files in the articles directory
+for file in "${ARTICLES_DIR}"/*; do
+    # Get just the filename
+    filename=$(basename "$file")
+    
+    if [[ "$filename" != "build.sh" && "$filename" != "404.html" && "$filename" != "sitemap.xml" && -f "$file" ]]; then
+        commit_date=$(git -C "${ROOT_DIR}" log -1 --format=%cd --date=short -- "$file")
+        
+        # Remove .html extension if present
+        filename_without_extension=${filename%.html}
+        
+        # Generate the XML for this file
+        echo "<url>"
+        echo "  <loc>https://www.derpdevstuffs.org/articles/$filename_without_extension</loc>"
+        echo "  <lastmod>$commit_date</lastmod>"
+        echo "  <changefreq>monthly</changefreq>"
+        echo "  <priority>0.7</priority>"
+        echo "</url>"
+    fi
+done
+
+# End the XML output
+echo '</urlset>'
+} > "${ARTICLES_DIR}/sitemap.xml"
+
+echo "sitemap.xml has been created in the articles directory."
+
 # Check if the articles directory exists
 if [ -d "articles" ]; then
   # Move the articles directory into the dist directory
