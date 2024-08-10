@@ -7,8 +7,8 @@ fi
 # Define the root directory and articles directory
 ROOT_DIR="$(pwd)"
 ARTICLES_DIR="${ROOT_DIR}/articles"
-OWNER=The-Economic-Journal-Dev
-REPO=cf-pages
+OWNER="The-Economic-Journal-Dev"
+REPO="cf-pages"
 
 # Start the XML output to sitemap.xml in the articles directory
 {
