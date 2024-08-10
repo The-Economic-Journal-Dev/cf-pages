@@ -10,3 +10,5 @@ Disallow: /assets
 Disallow: /profile
 Disallow: /home
 Crawl-delay: 10
+
+Sitemap: www.derpdevstuffs.org/sitemap.xml
