@@ -4,6 +4,20 @@ if [ ! -d "dist" ]; then
   mkdir dist
 fi
 
+# Ensure jq is installed
+if ! command -v jq &> /dev/null
+then
+    echo "jq could not be found, installing jq..."
+    if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+        sudo apt-get update && sudo apt-get install -y jq
+    elif [[ "$OSTYPE" == "darwin"* ]]; then
+        brew install jq
+    else
+        echo "Please install jq manually."
+        exit 1
+    fi
+fi
+
 # Define the root directory and articles directory
 ROOT_DIR="$(pwd)"
 ARTICLES_DIR="${ROOT_DIR}/articles"
