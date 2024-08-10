@@ -7,6 +7,8 @@ fi
 # Define the root directory and articles directory
 ROOT_DIR="$(pwd)"
 ARTICLES_DIR="${ROOT_DIR}/articles"
+OWNER=The-Economic-Journal-Dev
+REPO=cf-pages
 
 # Start the XML output to sitemap.xml in the articles directory
 {
@@ -19,7 +21,8 @@ for file in "${ARTICLES_DIR}"/*; do
     filename=$(basename "$file")
     
     if [[ "$filename" != "build.sh" && "$filename" != "404.html" && "$filename" != "sitemap.xml" && -f "$file" ]]; then
-        commit_date=$(git -C "${ROOT_DIR}" log -1 --format=%cd --date=short -- "$file")
+        commit_date=$(curl -s "https://api.github.com/repos/$OWNER/$REPO/commits?path=$file&page=1&per_page=1" | \
+     jq -r '.[0].commit.committer.date')
         
         # Remove .html extension if present
         filename_without_extension=${filename%.html}
