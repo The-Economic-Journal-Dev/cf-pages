@@ -9,6 +9,7 @@ ROOT_DIR="$(pwd)"
 ARTICLES_DIR="${ROOT_DIR}/articles"
 OWNER="The-Economic-Journal-Dev"
 REPO="cf-pages"
+DOMAIN="derpdevstuffs.org"
 
 # Start the XML output to sitemap.xml in the articles directory
 {
@@ -32,7 +33,7 @@ for file in "${ARTICLES_DIR}"/*; do
         
         # Generate the XML for this file
         echo "<url>"
-        echo "  <loc>https://www.derpdevstuffs.org/articles/$filename_without_extension</loc>"
+        echo "  <loc>https://$DOMAIN.org/articles/$filename_without_extension</loc>"
         echo "  <lastmod>$commit_date</lastmod>"
         echo "  <changefreq>monthly</changefreq>"
         echo "  <priority>0.7</priority>"
