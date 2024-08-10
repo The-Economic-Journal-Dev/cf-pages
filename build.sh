@@ -36,7 +36,7 @@ for file in "${ARTICLES_DIR}"/*; do
     
     if [[ "$filename" != "build.sh" && "$filename" != "404.html" && "$filename" != "sitemap.xml" && -f "$file" ]]; then
         commit_date=$(curl -s "https://api.github.com/repos/$OWNER/$REPO/commits?path=$file&page=1&per_page=1" | \
-     jq -r '.[0].commit.committer.date')
+    grep '"date"' | head -n 1 | cut -d '"' -f 4)
         
         # Remove .html extension if present
         filename_without_extension=${filename%.html}
