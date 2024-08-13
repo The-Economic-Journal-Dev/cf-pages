@@ -47,21 +47,22 @@ if ! $SPA_MODE; then
           echo "</url>"
       fi
   done
-fi
 
-# End the XML output
-echo '</urlset>'
-} > "${ARTICLES_DIR}/sitemap.xml"
 
-echo "sitemap.xml has been created in the articles directory."
+  # End the XML output
+  echo '</urlset>'
+  } > "${ARTICLES_DIR}/sitemap.xml"
 
-# Check if the articles directory exists
-if [ -d "articles" ]; then
-  # Move the articles directory into the dist directory
-  cp -r articles dist/
-  echo "Moved articles directory to dist."
-else
-  echo "articles directory does not exist."
+  echo "sitemap.xml has been created in the articles directory."
+
+  # Check if the articles directory exists
+  if [ -d "articles" ]; then
+    # Move the articles directory into the dist directory
+    cp -r articles dist/
+    echo "Moved articles directory to dist."
+  else
+    echo "articles directory does not exist."
+  fi
 fi
 
 # Check if the articles directory exists
