@@ -11,7 +11,7 @@ ROOT_DIR="$(pwd)"
 ARTICLES_DIR="${ROOT_DIR}/articles"
 OWNER="The-Economic-Journal-Dev"
 REPO="cf-pages"
-DOMAIN="derpdevstuffs.org"
+DOMAIN="theeconomicjournal.org"
 
 if ! $SPA_MODE; then
   # Start the XML output to sitemap.xml in the articles directory
